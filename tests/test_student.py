@@ -42,3 +42,23 @@ def test_get_student_with_more_classes():
     )
 
     # TODO: write assertions
+    assert get_student_with_more_classes(ada, charles) == ada
+
+def test_no_courses_equals_empty_list():
+    ada = Student(
+        "Ada Lovelace",
+        "sophomore",
+    )
+
+    assert ada.courses == []
+
+def test_student_b_is_most_classes():
+    charles = Student("Charles Babbage", "senior", ["mathematics", "foundations of computing"])
+    ada = Student(
+        "Ada Lovelace",
+        "sophomore",
+        ["mechanical engineering"]
+    )
+
+    # TODO: write assertions
+    assert get_student_with_more_classes(ada, charles) == charles
